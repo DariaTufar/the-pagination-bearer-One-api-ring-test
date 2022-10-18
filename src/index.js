@@ -1,7 +1,12 @@
-import { apiRings } from "./js/apiRings";
+import { apiRings } from './js/apiRings';
 
-import {markup} from "./js/templates/markup.hbs"
+import markup from './js/templates/markup.hbs';
 
-apiRings().then (console.log)
+const list = document.querySelector(`.list`);
 
- 
+const moreBtn = document.querySelector(`.more`);
+
+// console.log(markup)
+apiRings().then(data => {
+  list.insertAdjacentHTML(`beforeend`, markup(data.docs));
+});

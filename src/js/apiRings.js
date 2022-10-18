@@ -3,7 +3,8 @@ const BASE_URL = `https://the-one-api.dev/v2/`;
 const bearerToken = `Bearer dhO0HDe6y43i3z0VXql4`;
 const character = `character`; // endpoint
 const URL = `${BASE_URL}${character}?limit=10&page=1`;
-console.log(URL);
+// console.log(URL);
+
 
 const options = {
   headers: {
@@ -16,7 +17,7 @@ export function apiRings() {
     if (!response.ok) {
       throw new Error(`fail`);
     }
-    // console.log(response.json())
+    
     return response.json();
     
   });
